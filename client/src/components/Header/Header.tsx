@@ -12,25 +12,28 @@ import { UserAvatar } from "../UserAvatar";
 
 type HeaderProps = {
   openPostEditor: () => void;
+  handleRandomUser: () => void;
+  user?: UserData;
 };
 
-export const Header: React.FC<HeaderProps> = ({ openPostEditor }) => {
-  const user: UserData = { id: 0, name: "" }; // CHANGE ME
+export const Header: React.FC<HeaderProps> = ({ openPostEditor,user,handleRandomUser }) => {
 
   return (
     <AppBar position="static">
       <Toolbar disableGutters className="app-toolbar">
+        {user &&
         <Tooltip title="Switch User">
-          <IconButton>
-            <UserAvatar user={user} className="user-avatar" />
+          <IconButton onClick={handleRandomUser}>
+            <UserAvatar user={user} className="user-avatar"/>
           </IconButton>
         </Tooltip>
+        }
         <div>
           <Typography className="app-title main" variant="h6">
             BriefCam Social
           </Typography>
           <Typography className="app-title" variant="subtitle1" lineHeight={1}>
-            {user.name}
+            {user?.name}
           </Typography>
         </div>
         <Tooltip title="Add Post">
