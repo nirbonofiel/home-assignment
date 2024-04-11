@@ -29,7 +29,6 @@ export const DeletePost: React.FC<DeletePostProps> = ({ open, setOpen, post, upd
           const formData = new FormData(event.currentTarget);
           const formJson = Object.fromEntries((formData as any).entries());
           formJson.postId = Number(formJson.postId)
-          console.log(formJson);
           deletePost(`posts/${formJson.postId}`,updatePosts);
           handleClose();
         },

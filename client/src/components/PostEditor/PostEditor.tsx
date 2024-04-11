@@ -37,7 +37,7 @@ export const PostEditor: React.FC<PostEditorProps> = ({ open, setOpen, user, upd
           event.preventDefault();
           const formData = new FormData(event.currentTarget);
           const formJson = Object.fromEntries((formData as any).entries());
-          
+
           if(formJson.imageUrl === ''){
             delete formJson.imageUrl;
           }
@@ -54,7 +54,7 @@ export const PostEditor: React.FC<PostEditorProps> = ({ open, setOpen, user, upd
         },
       }}
     >
-      <DialogTitle color={'#1976d2'} textAlign="center" style={{display:'flex',alignItems: 'center'}}><UserAvatar user={user}></UserAvatar><CreateIcon style={{fontSize:18,marginRight:6,marginLeft:6}}/>{title}</DialogTitle>
+      <DialogTitle color={'#1976d2'} className="dialog-title"><UserAvatar user={user}></UserAvatar><CreateIcon className="create-icon"/>{title}</DialogTitle>
       <DialogContent>
         <TextField
           multiline

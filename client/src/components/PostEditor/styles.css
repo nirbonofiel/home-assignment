@@ -1,6 +1,10 @@
-.post-editor-content {
-  min-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.create-icon {
+  font-size:18px;
+  margin-right:6px;
+  margin-left:6px;
+}
+
+.dialog-title {
+  display:flex;
+  align-items: center;
 }
